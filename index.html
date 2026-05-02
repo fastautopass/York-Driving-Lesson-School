@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="DVSA approved driving lessons in York. Automatic & manual lessons, intensive courses, motorway lessons, driving assessments, and ADI training across York.">
+<title>Driving Lessons York | Automatic & Manual | York Driving Lesson School</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --charcoal:#1A1A1A;--light:#F2F2F2;--white:#FFFFFF;--near-black:#111111;
+  --grey:#555555;--red:#D32F2F;--border:#E0E0E0;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--light);color:var(--grey);line-height:1.6;overflow-x:hidden}
+
+/* ── HEADER ── */
+header{background:var(--white);border-bottom:1px solid var(--border);position:fixed;width:100%;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,0.05)}
+.header-inner{max-width:1280px;margin:0 auto;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:1.35rem;font-weight:800;color:var(--near-black);letter-spacing:-0.03em}
+nav ul{display:flex;gap:2.5rem;list-style:none}
+nav a{text-decoration:none;color:var(--grey);font-size:0.9rem;font-weight:600;transition:color 0.2s}
+nav a:hover{color:var(--red)}
+.mobile-toggle{display:none;background:none;border:none;font-size:1.4rem;color:var(--near-black);cursor:pointer}
+
+/* ── HERO ── */
+.hero{background:var(--charcoal);color:var(--white);padding:9rem 2rem 6rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;right:0;width:50%;height:100%;background:linear-gradient(135deg,transparent 0%,rgba(211,47,47,0.08) 100%)}
+.hero-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;position:relative;z-index:2}
+.hero h1{font-size:clamp(2.5rem,4.5vw,4rem);font-weight:800;line-height:1.1;margin-bottom:1.5rem;letter-spacing:-0.04em}
+.hero-text{font-size:1.05rem;line-height:1.75;opacity:0.92;max-width:540px;font-weight:400;margin-bottom:2rem}
+
+/* ── ENQUIRY FORM (UPDATED) ── */
+.enquiry-form{background:var(--white);border-radius:20px;padding:2.5rem;box-shadow:0 10px 40px rgba(0,0,0,0.15)}
+.enquiry-form h2{font-size:1.9rem;font-weight:700;color:var(--near-black);margin-bottom:0.75rem;letter-spacing:-0.02em;text-align:center}
+.form-subtext{font-size:0.88rem;color:#4A4A4A;margin-bottom:2.25rem;font-weight:600;text-align:center}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.25rem}
+.form-group{display:flex;flex-direction:column}
+.form-group label{font-size:0.85rem;font-weight:600;color:var(--near-black);margin-bottom:0.5rem}
+.form-group input,.form-group select{width:100%;padding:0.85rem 1rem;border:none;border-radius:10px;background:#F5F5F5;font-size:0.92rem;font-family:'Inter',sans-serif;color:var(--near-black);transition:all 0.2s;outline:none}
+.form-group input:focus,.form-group select:focus{background:#EBEBEB;box-shadow:0 0 0 3px rgba(211,47,47,0.1)}
+.form-group select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%231A1A1A' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;background-color:#F5F5F5;padding-right:3rem}
+.form-checkbox{display:flex;align-items:flex-start;gap:0.7rem;margin-bottom:1.25rem}
+.form-checkbox input[type="checkbox"]{width:18px;height:18px;margin-top:0.15rem;cursor:pointer;flex-shrink:0;accent-color:var(--red)}
+.form-checkbox label{font-size:0.78rem;line-height:1.6;color:#555555;cursor:pointer;font-weight:400}
+.form-checkbox a{color:var(--red);text-decoration:none;font-weight:500}
+.form-checkbox a:hover{text-decoration:underline}
+.submit-btn{width:100%;background:var(--red);color:var(--white);border:none;padding:1rem;border-radius:10px;font-size:0.92rem;font-weight:700;cursor:pointer;transition:all 0.2s;letter-spacing:0.05em;box-shadow:0 4px 12px rgba(211,47,47,0.25)}
+.submit-btn:hover{background:#B71C1C;transform:translateY(-1px);box-shadow:0 6px 16px rgba(211,47,47,0.35)}
+
+/* ── TRUST POINTS ── */
+.trust-bar{background:var(--white);padding:3.5rem 2rem;border-bottom:1px solid var(--border)}
+.trust-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:4rem;text-align:center}
+.trust-item{display:flex;flex-direction:column;align-items:center}
+.trust-icon{width:80px;height:80px;background:var(--light);border:2px solid var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;position:relative}
+.trust-icon svg{width:38px;height:38px;stroke:var(--red);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.trust-text{font-size:0.95rem;font-weight:700;color:var(--near-black);line-height:1.4}
+
+/* ── HERO TRUST ICONS (COMPACT) ── */
+.hero-trust{display:flex;gap:2.5rem;align-items:center;margin-bottom:0;flex-wrap:wrap}
+.hero-trust-item{display:flex;align-items:center;gap:0.75rem}
+.hero-trust-icon{width:45px;height:45px;background:rgba(255,255,255,0.1);border:2px solid var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hero-trust-icon svg{width:22px;height:22px;stroke:var(--red);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hero-trust-text{font-size:0.85rem;font-weight:600;color:var(--white);opacity:0.95;line-height:1.3}
+
+/* ── SECTIONS ── */
+section{padding:5rem 2rem;max-width:1280px;margin:0 auto}
+h2{font-size:clamp(2rem,3.5vw,2.6rem);font-weight:800;color:var(--near-black);margin-bottom:1rem;letter-spacing:-0.03em;text-align:center}
+.section-intro{font-size:1.05rem;color:var(--grey);line-height:1.7;margin-bottom:3rem;max-width:700px;text-align:center;margin-left:auto;margin-right:auto}
+
+/* ── SERVICES ── */
+#services{background:var(--light)}
+.service-group{margin-bottom:4rem}
+.service-group:last-child{margin-bottom:0}
+.service-group h3{font-size:1.3rem;font-weight:700;color:var(--near-black);margin-bottom:1.5rem}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.service-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2rem 1.5rem;text-decoration:none;display:block;transition:all 0.3s;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:var(--red);transform:scaleX(0);transition:transform 0.3s;transform-origin:left}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 10px 32px rgba(0,0,0,0.1);border-color:var(--red)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-card h4{font-size:1.05rem;font-weight:700;color:var(--near-black);margin-bottom:0.7rem;line-height:1.3}
+.service-card p{font-size:0.88rem;color:var(--grey);line-height:1.6}
+
+/* ── AREAS ── */
+#areas{background:var(--white)}
+.areas-text{font-size:1.05rem;color:var(--grey);line-height:1.8;max-width:800px;text-align:center;margin-left:auto;margin-right:auto}
+
+/* ── FAQ ── */
+#faq{background:var(--light)}
+.faq-list{max-width:900px}
+.faq-item{background:var(--white);border-radius:8px;padding:1.5rem 2rem;margin-bottom:1rem}
+.faq-question{font-size:1.05rem;font-weight:700;color:var(--near-black);cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none;transition:color 0.2s}
+.faq-question:hover{color:var(--red)}
+.faq-question::after{content:'+';font-size:2rem;color:var(--red);font-weight:400;transition:transform 0.2s;flex-shrink:0;margin-left:1rem}
+.faq-item.open .faq-question::after{transform:rotate(45deg)}
+.faq-answer{font-size:0.92rem;color:var(--grey);line-height:1.75;margin-top:1rem;display:none;padding-right:3rem}
+.faq-item.open .faq-answer{display:block}
+
+/* ── FOOTER ── */
+footer{background:var(--charcoal);color:rgba(255,255,255,0.7);padding:3.5rem 2rem 2rem}
+.footer-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem}
+.footer-logo{font-size:1.4rem;font-weight:800;color:var(--white);margin-bottom:1rem}
+.footer-text{line-height:1.7;font-size:0.9rem}
+.footer-col h4{color:var(--white);font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem;font-weight:700}
+.footer-col a{color:rgba(255,255,255,0.7);text-decoration:none;display:block;margin-bottom:0.6rem;font-size:0.9rem;transition:color 0.2s}
+.footer-col a:hover{color:var(--red)}
+.footer-bottom{max-width:1280px;margin:3rem auto 0;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.15);text-align:center;font-size:0.85rem;opacity:0.6}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:3rem}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .trust-inner{grid-template-columns:1fr;gap:2.5rem}
+  .footer-inner{grid-template-columns:1fr;gap:2.5rem}
+  .form-row{grid-template-columns:1fr}
+  .hero-trust{gap:1.5rem}
+}
+@media(max-width:768px){
+  nav ul{display:none}
+  .mobile-toggle{display:block}
+  .hero{padding:7rem 1.5rem 4rem}
+  section{padding:4rem 1.5rem}
+  .trust-bar{padding:3rem 1.5rem}
+  .services-grid{grid-template-columns:1fr}
+  .header-inner{padding:1rem 1.5rem}
+  .faq-answer{padding-right:0}
+  .faq-item{padding:1.2rem 1.5rem}
+  .enquiry-form{padding:2rem 1.5rem;border-radius:16px}
+  .form-row{grid-template-columns:1fr}
+  .hero-trust{flex-direction:column;align-items:flex-start;gap:1rem}
+  .hero-trust-item{gap:0.6rem}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo">York Driving Lesson School</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#areas">Areas</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="mobile-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <h1>Automatic & Manual Driving Lessons in York</h1>
+      <p class="hero-text">We provide driving lessons in York with a DVSA approved instructor. Our automatic driving lessons York and manual driving lessons York are designed for beginners and nervous drivers. With calm, structured teaching on local York test routes, we help learners build the skills and confidence they need to pass their test.</p>
+      
+      <!-- COMPACT TRUST ICONS -->
+      <div class="hero-trust">
+        <div class="hero-trust-item">
+          <div class="hero-trust-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+              <circle cx="12" cy="12" r="4"/>
+            </svg>
+          </div>
+          <div class="hero-trust-text">DVSA Approved Instructors</div>
+        </div>
+        <div class="hero-trust-item">
+          <div class="hero-trust-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+              <circle cx="12" cy="9" r="2.5"/>
+            </svg>
+          </div>
+          <div class="hero-trust-text">Local York Test Routes</div>
+        </div>
+        <div class="hero-trust-item">
+          <div class="hero-trust-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9"/>
+              <circle cx="12" cy="12" r="3"/>
+              <line x1="12" y1="3" x2="12" y2="9"/>
+              <line x1="12" y1="15" x2="12" y2="21"/>
+              <line x1="3" y1="12" x2="9" y2="12"/>
+              <line x1="15" y1="12" x2="21" y2="12"/>
+            </svg>
+          </div>
+          <div class="hero-trust-text">Manual & Automatic Lessons</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- UPDATED ENQUIRY FORM -->
+    <div class="enquiry-form">
+      <h2>Start your enquiry</h2>
+      <p class="form-subtext">⚡ Response within 2 hours • 24/7 support</p>
+      
+      <form action="#" method="post">
+        <!-- ROW 1: Full Name + Mobile Number -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fullname">Full Name *</label>
+            <input type="text" id="fullname" name="fullname" required>
+          </div>
+          <div class="form-group">
+            <label for="mobile">Mobile Number *</label>
+            <input type="tel" id="mobile" name="mobile" required>
+          </div>
+        </div>
+        
+        <!-- ROW 2: Postcode -->
+        <div class="form-group" style="margin-bottom:1.25rem">
+          <label for="postcode">Postcode *</label>
+          <input type="text" id="postcode" name="postcode" required>
+        </div>
+        
+        <!-- ROW 3: Service Dropdown -->
+        <div class="form-group" style="margin-bottom:1.25rem">
+          <label for="service">What are you looking for? *</label>
+          <select id="service" name="service" required>
+            <option value="">Please select...</option>
+            <option value="automatic">Automatic Driving Lessons</option>
+            <option value="manual">Manual Driving Lessons</option>
+            <option value="intensive">Intensive Driving Courses</option>
+            <option value="refresher">Refresher Driving Lessons</option>
+            <option value="motorway">Motorway Driving Lessons</option>
+            <option value="assessment">Driving Assessment</option>
+            <option value="taxi-assessment">Taxi Driving Assessment</option>
+            <option value="adi-part2">ADI Part 2 Training</option>
+            <option value="adi-part3">ADI Part 3 Training</option>
+          </select>
+        </div>
+        
+        <!-- CONSENT CHECKBOX -->
+        <div class="form-checkbox">
+          <input type="checkbox" id="consent" name="consent" required>
+          <label for="consent">
+            I confirm that I have read and agree to the <a href="/terms-conditions">Terms & Conditions</a> and <a href="/privacy-policy">Privacy Policy</a>, and consent to York Driving Lesson School storing my details and contacting me regarding my enquiry.
+          </label>
+        </div>
+        
+        <!-- SUBMIT BUTTON -->
+        <button type="submit" class="submit-btn">SEND AN ENQUIRY</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section id="services">
+  <h2>Driving Lessons & Training in York</h2>
+  <p class="section-intro">Choose from a range of driving lessons and training options across York. Each service will have its own page with more details, prices, and availability.</p>
+  
+  <div class="service-group">
+    <h3>Learn to Drive</h3>
+    <div class="services-grid">
+      <a href="/automatic-driving-lessons-york" class="service-card">
+        <h4>Automatic Driving Lessons</h4>
+        <p>Learn in an automatic car with calm, simple lessons across York.</p>
+      </a>
+      <a href="/manual-driving-lessons-york" class="service-card">
+        <h4>Manual Driving Lessons</h4>
+        <p>Build confidence with clutch control, gears, and everyday road skills.</p>
+      </a>
+      <a href="/intensive-driving-courses-york" class="service-card">
+        <h4>Intensive Driving Courses</h4>
+        <p>Focused lessons for learners who want to make quicker progress.</p>
+      </a>
+      <a href="/refresher-driving-lessons-york" class="service-card">
+        <h4>Refresher Driving Lessons</h4>
+        <p>Helpful lessons for drivers who want to rebuild confidence.</p>
+      </a>
+    </div>
+  </div>
+  
+  <div class="service-group">
+    <h3>Build More Confidence</h3>
+    <div class="services-grid">
+      <a href="/motorway-driving-lessons-york" class="service-card">
+        <h4>Motorway Driving Lessons</h4>
+        <p>Practical motorway driving support for safer, more confident journeys.</p>
+      </a>
+      <a href="/driving-assessment-york" class="service-card">
+        <h4>Driving Assessment</h4>
+        <p>A simple assessment to understand your current driving level and what support you may need.</p>
+      </a>
+      <a href="/taxi-driving-assessment-york" class="service-card">
+        <h4>Taxi Driving Assessment</h4>
+        <p>Preparation and support for drivers getting ready for a taxi driving assessment.</p>
+      </a>
+    </div>
+  </div>
+  
+  <div class="service-group">
+    <h3>Instructor Training</h3>
+    <div class="services-grid">
+      <a href="/adi-part-2-training-york" class="service-card">
+        <h4>ADI Part 2 Training</h4>
+        <p>Driving ability training for trainee driving instructors preparing for Part 2.</p>
+      </a>
+      <a href="/adi-part-3-training-york" class="service-card">
+        <h4>ADI Part 3 Training</h4>
+        <p>Teaching ability support for trainee driving instructors preparing for Part 3.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS COVERED -->
+<section id="areas">
+  <h2>Driving Lessons Across York</h2>
+  <p class="areas-text">We provide driving lessons across York and nearby areas, including York city centre, Acomb, Clifton Moor, Heworth, Fulford, Tang Hall, Rawcliffe, and Bishopthorpe. All lessons include practice on local test routes and roads that you'll encounter during your driving test. Pickup and drop-off is included, and lessons are available at times that suit your schedule.</p>
+</section>
+
+<!-- FAQ SECTION -->
+<section id="faq">
+  <h2>Frequently Asked Questions</h2>
+  
+  <div class="faq-list">
+    <div class="faq-item">
+      <h3 class="faq-question">Do you offer automatic driving lessons in York?</h3>
+      <div class="faq-answer">Yes, we provide automatic driving lessons throughout York. Automatic lessons are helpful for learners who find manual gear changes challenging or prefer a simpler approach to learning.</div>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-question">Do you offer manual driving lessons in York?</h3>
+      <div class="faq-answer">Yes, manual driving lessons are available across York. Learning in a manual car gives you a full manual licence, which allows you to drive both manual and automatic vehicles.</div>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-question">How much do driving lessons cost in York?</h3>
+      <div class="faq-answer">Lesson prices vary depending on the type of lesson and whether you book individual lessons or a block. Please get in touch using the enquiry form for current pricing and availability.</div>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-question">Can nervous drivers book lessons?</h3>
+      <div class="faq-answer">Absolutely. We work with nervous drivers regularly and understand that everyone learns at their own pace. Lessons are calm and structured, and we can start in quieter areas to help build confidence gradually.</div>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-question">Do you cover local York test routes?</h3>
+      <div class="faq-answer">Yes, all lessons include practice on roads and routes that are commonly used for driving tests in York. This helps learners feel familiar and prepared on test day.</div>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-question">Do you offer intensive driving courses in York?</h3>
+      <div class="faq-answer">Yes, intensive driving courses are available for learners who want to make faster progress. These courses involve multiple lessons over a shorter period and can be tailored to your current skill level.</div>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-question">Can I book refresher driving lessons?</h3>
+      <div class="faq-answer">Yes, refresher lessons are available for anyone who passed their test but hasn't driven for a while. These lessons help rebuild confidence and cover any areas where you feel less certain.</div>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-question">How many driving lessons will I need?</h3>
+      <div class="faq-answer">The number of lessons varies depending on your starting point and how quickly you learn. Most learners need around 40-50 hours of lessons, though this can be more or less depending on individual progress.</div>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-question">Are lessons available in the evenings and weekends?</h3>
+      <div class="faq-answer">Yes, lessons are available at times that suit your schedule, including mornings, afternoons, evenings, and weekends. We do our best to work around your commitments.</div>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-question">What areas of York do you cover?</h3>
+      <div class="faq-answer">We provide lessons across York city centre, Acomb, Clifton Moor, Heworth, Fulford, Tang Hall, Rawcliffe, Bishopthorpe, and nearby areas. Pickup and drop-off is included.</div>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-question">Is the instructor DVSA approved?</h3>
+      <div class="faq-answer">Yes, all lessons are provided by a fully qualified DVSA approved driving instructor with local knowledge of York roads and test routes.</div>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-question">Can I have a trial lesson before booking a course?</h3>
+      <div class="faq-answer">Yes, you can book a single lesson to see if our teaching style suits you before committing to a longer course or block booking.</div>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-question">What happens if I need to cancel a lesson?</h3>
+      <div class="faq-answer">We ask for at least 24 hours' notice for cancellations. Please get in touch for full details on our cancellation policy.</div>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-question">How do I make an enquiry?</h3>
+      <div class="faq-answer">You can use the enquiry form at the top of this page to send us your details. We'll get back to you as soon as possible to discuss availability and answer any questions you have.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">York Driving Lesson School</div>
+      <p class="footer-text">DVSA approved driving lessons in York. Automatic & manual lessons, intensive courses, refresher lessons, motorway lessons, driving assessments, and ADI training across York and surrounding areas.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="/automatic-driving-lessons-york">Automatic Lessons</a>
+      <a href="/manual-driving-lessons-york">Manual Lessons</a>
+      <a href="/intensive-driving-courses-york">Intensive Courses</a>
+      <a href="/refresher-driving-lessons-york">Refresher Lessons</a>
+      <a href="/motorway-driving-lessons-york">Motorway Lessons</a>
+      <a href="/adi-part-2-training-york">ADI Part 2 Training</a>
+      <a href="/adi-part-3-training-york">ADI Part 3 Training</a>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#services">Services</a>
+      <a href="#areas">Areas</a>
+      <a href="#faq">FAQ</a>
+      <a href="#home">Enquire Now</a>
+      <a href="sitemap.html">Sitemap</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 York Driving Lesson School. All rights reserved.
+  </div>
+</footer>
+
+<script>
+// FAQ Accordion
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+// Form submission
+document.querySelector('form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  alert('Thank you for your enquiry. We will get back to you as soon as possible.');
+});
+</script>
+
+</body>
+</html>
