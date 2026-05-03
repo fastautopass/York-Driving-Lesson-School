@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Automatic driving lessons in York with a DVSA approved instructor. Calm, simple lessons for beginners and nervous drivers on local York test routes.">
+<title>Automatic Driving Lessons York | Automatic Driving Instructor York</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --charcoal:#1A1A1A;--light:#F2F2F2;--white:#FFFFFF;--near-black:#111111;
+  --grey:#555555;--red:#D32F2F;--border:#E0E0E0;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--light);color:var(--grey);line-height:1.6;overflow-x:hidden}
+
+/* HEADER */
+header{background:var(--white);border-bottom:1px solid var(--border);position:fixed;width:100%;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,0.05)}
+.header-inner{max-width:1280px;margin:0 auto;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:1.35rem;font-weight:800;color:var(--near-black);letter-spacing:-0.03em;text-decoration:none}
+nav ul{display:flex;gap:2.5rem;list-style:none}
+nav a{text-decoration:none;color:var(--grey);font-size:0.9rem;font-weight:600;transition:color 0.2s}
+nav a:hover{color:var(--red)}
+.mobile-toggle{display:none;background:none;border:none;font-size:1.4rem;color:var(--near-black);cursor:pointer}
+
+/* HERO */
+.hero{background:var(--charcoal);color:var(--white);padding:9rem 2rem 4rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;right:0;width:50%;height:100%;background:linear-gradient(135deg,transparent 0%,rgba(211,47,47,0.08) 100%)}
+.hero-inner{max-width:1080px;margin:0 auto;position:relative;z-index:2}
+.hero h1{font-size:clamp(2.5rem,4.5vw,3.5rem);font-weight:800;line-height:1.1;margin-bottom:1.5rem;letter-spacing:-0.04em}
+.hero-text{font-size:1.1rem;line-height:1.8;opacity:0.92;max-width:820px}
+
+/* SECTIONS */
+section{padding:5rem 2rem;max-width:1080px;margin:0 auto}
+h2{font-size:clamp(1.8rem,3vw,2.3rem);font-weight:800;color:var(--near-black);margin-bottom:1.5rem;letter-spacing:-0.03em}
+h3{font-size:1.3rem;font-weight:700;color:var(--near-black);margin-bottom:1rem;margin-top:2rem}
+p{font-size:1.05rem;line-height:1.8;color:var(--grey);margin-bottom:1.2rem}
+ul{margin-left:1.5rem;margin-bottom:1.5rem}
+ul li{font-size:1.05rem;line-height:1.8;color:var(--grey);margin-bottom:0.5rem}
+
+/* ENQUIRY FORM */
+.enquiry-section{background:var(--white);padding:5rem 2rem}
+.enquiry-wrapper{max-width:600px;margin:0 auto}
+.enquiry-form{background:var(--white);border-radius:20px;padding:2.5rem;box-shadow:0 10px 40px rgba(0,0,0,0.15);border:1px solid var(--border)}
+.enquiry-form h2{font-size:1.9rem;font-weight:700;color:var(--near-black);margin-bottom:0.75rem;letter-spacing:-0.02em;text-align:center}
+.form-subtext{font-size:0.88rem;color:#4A4A4A;margin-bottom:2.25rem;font-weight:600;text-align:center}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.25rem}
+.form-group{display:flex;flex-direction:column}
+.form-group label{font-size:0.85rem;font-weight:600;color:var(--near-black);margin-bottom:0.5rem}
+.form-group input,.form-group select{width:100%;padding:0.85rem 1rem;border:none;border-radius:10px;background:#F5F5F5;font-size:0.92rem;font-family:'Inter',sans-serif;color:var(--near-black);transition:all 0.2s;outline:none}
+.form-group input:focus,.form-group select:focus{background:#EBEBEB;box-shadow:0 0 0 3px rgba(211,47,47,0.1)}
+.form-group select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%231A1A1A' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;background-color:#F5F5F5;padding-right:3rem}
+.form-checkbox{display:flex;align-items:flex-start;gap:0.7rem;margin-bottom:1.25rem}
+.form-checkbox input[type="checkbox"]{width:18px;height:18px;margin-top:0.15rem;cursor:pointer;flex-shrink:0;accent-color:var(--red)}
+.form-checkbox label{font-size:0.78rem;line-height:1.6;color:#555555;cursor:pointer;font-weight:400}
+.form-checkbox a{color:var(--red);text-decoration:none;font-weight:500}
+.form-checkbox a:hover{text-decoration:underline}
+.submit-btn{width:100%;background:var(--red);color:var(--white);border:none;padding:1rem;border-radius:10px;font-size:0.92rem;font-weight:700;cursor:pointer;transition:all 0.2s;letter-spacing:0.05em;box-shadow:0 4px 12px rgba(211,47,47,0.25)}
+.submit-btn:hover{background:#B71C1C;transform:translateY(-1px);box-shadow:0 6px 16px rgba(211,47,47,0.35)}
+
+/* FAQ */
+.faq-section{background:var(--light);padding:5rem 2rem}
+.faq-wrapper{max-width:900px;margin:0 auto}
+.faq-list{margin-top:2rem}
+.faq-item{background:var(--white);border-radius:8px;padding:1.5rem 2rem;margin-bottom:1rem}
+.faq-question{font-size:1.05rem;font-weight:700;color:var(--near-black);cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none;transition:color 0.2s}
+.faq-question:hover{color:var(--red)}
+.faq-question::after{content:'+';font-size:2rem;color:var(--red);font-weight:400;transition:transform 0.2s;flex-shrink:0;margin-left:1rem}
+.faq-item.open .faq-question::after{transform:rotate(45deg)}
+.faq-answer{font-size:0.92rem;color:var(--grey);line-height:1.75;margin-top:1rem;display:none;padding-right:3rem}
+.faq-item.open .faq-answer{display:block}
+
+/* FOOTER */
+footer{background:var(--charcoal);color:rgba(255,255,255,0.7);padding:3.5rem 2rem 2rem}
+.footer-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem}
+.footer-logo{font-size:1.4rem;font-weight:800;color:var(--white);margin-bottom:1rem}
+.footer-text{line-height:1.7;font-size:0.9rem}
+.footer-col h4{color:var(--white);font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem;font-weight:700}
+.footer-col a{color:rgba(255,255,255,0.7);text-decoration:none;display:block;margin-bottom:0.6rem;font-size:0.9rem;transition:color 0.2s}
+.footer-col a:hover{color:var(--red)}
+.footer-bottom{max-width:1280px;margin:3rem auto 0;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.15);text-align:center;font-size:0.85rem;opacity:0.6}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .form-row{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr;gap:2.5rem}
+}
+@media(max-width:768px){
+  nav ul{display:none}
+  .mobile-toggle{display:block}
+  .hero{padding:7rem 1.5rem 4rem}
+  section{padding:4rem 1.5rem}
+  .enquiry-section{padding:4rem 1.5rem}
+  .faq-section{padding:4rem 1.5rem}
+  .header-inner{padding:1rem 1.5rem}
+  .faq-answer{padding-right:0}
+  .faq-item{padding:1.2rem 1.5rem}
+  .enquiry-form{padding:2rem 1.5rem;border-radius:16px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">York Driving Lesson School</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#areas">Areas</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="mobile-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Automatic Driving Lessons in York</h1>
+    <p class="hero-text">We provide automatic driving lessons in York with a DVSA approved instructor. Learning in an automatic car means no gears or clutch to worry about, so you can focus on the road, building confidence, and learning safe driving skills. Our automatic lessons are suitable for complete beginners, nervous drivers, and anyone who prefers a simpler approach to learning. All lessons include practice on local York test routes to help you feel prepared and familiar with the roads you'll drive on during your test.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Who Automatic Lessons Are Suitable For</h2>
+  <p>Automatic driving lessons in York are helpful for many different learners. They work well for people who find manual gear changes difficult or stressful, and for those who want to focus on road awareness and safe driving without the added challenge of clutch control.</p>
+  <p>Automatic lessons are often chosen by:</p>
+  <ul>
+    <li>Complete beginners who have never driven before</li>
+    <li>Nervous drivers who find manual lessons overwhelming</li>
+    <li>People returning to driving after a break</li>
+    <li>Learners who have struggled with manual lessons in the past</li>
+    <li>Anyone who prefers a more straightforward learning experience</li>
+  </ul>
+  <p>If you're not sure whether automatic or manual lessons are right for you, we can discuss your options when you enquire.</p>
+</section>
+
+<section style="background:var(--white);padding:5rem 2rem;margin-left:-2rem;margin-right:-2rem">
+  <div style="max-width:1080px;margin:0 auto">
+    <h2>What You Will Learn</h2>
+    <p>Automatic driving lessons cover all the same road skills and safety techniques as manual lessons. The main difference is that you won't need to learn clutch control or gear changes, which allows more time to focus on other important aspects of driving.</p>
+    <p>During your automatic driving lessons in York, you'll learn:</p>
+    <ul>
+      <li>Road positioning and lane discipline</li>
+      <li>Observation and hazard awareness</li>
+      <li>Safe speed management and stopping distances</li>
+      <li>Junction techniques and roundabouts</li>
+      <li>Manoeuvres including reversing, parking, and turning</li>
+      <li>Traffic signs, road markings, and rules of the road</li>
+      <li>Driving in different conditions and environments</li>
+      <li>Independent driving and route planning</li>
+    </ul>
+    <p>Lessons are structured to build your skills gradually, starting in quieter areas and progressing to busier roads as your confidence grows.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Learning on York Roads and Local Test Routes</h2>
+  <p>All automatic driving lessons take place on real York roads, including the routes commonly used for driving tests. Practicing on local test routes helps you become familiar with the areas where you'll take your test, which can make test day feel less daunting.</p>
+  <p>York test routes include a mix of residential streets, main roads, dual carriageways, and rural areas. Lessons are designed to cover all the different road types and conditions you're likely to encounter, so you're well-prepared for both your test and driving independently afterwards.</p>
+  <p>We also include practice with common York road features such as:</p>
+  <ul>
+    <li>Roundabouts and traffic lights</li>
+    <li>Narrow city centre streets</li>
+    <li>Busy junctions and pedestrian crossings</li>
+    <li>Residential zones and school areas</li>
+    <li>National speed limit roads</li>
+  </ul>
+</section>
+
+<section style="background:var(--white);padding:5rem 2rem;margin-left:-2rem;margin-right:-2rem">
+  <div style="max-width:1080px;margin:0 auto">
+    <h2>Automatic vs Manual Lessons</h2>
+    <p>Choosing between automatic and manual lessons is a personal decision, and there's no right or wrong answer. Both types of lessons teach the same driving skills and road safety principles. The main difference is what you'll be able to drive afterwards.</p>
+    <p>If you pass your test in an automatic car, you'll receive an automatic-only licence. This means you can legally drive automatic vehicles but not manual ones. If you think you might want to drive a manual car in the future, you would need to take another test in a manual vehicle.</p>
+    <p>If you pass your test in a manual car, you can drive both manual and automatic vehicles.</p>
+    <p>For many learners, the simplicity of automatic lessons makes the learning process less stressful and allows them to focus on becoming a safe, confident driver. Most cars available today are automatic, and the number of automatic vehicles on UK roads continues to grow.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Areas Covered Around York</h2>
+  <p>We provide automatic driving lessons across York and nearby areas. Lessons include pickup and drop-off from your home, work, or college, so you don't need to worry about getting to a meeting point.</p>
+  <p>Areas covered include:</p>
+  <ul>
+    <li>York city centre</li>
+    <li>Acomb</li>
+    <li>Clifton Moor</li>
+    <li>Heworth</li>
+    <li>Fulford</li>
+    <li>Tang Hall</li>
+    <li>Rawcliffe</li>
+    <li>Bishopthorpe</li>
+    <li>Surrounding villages and nearby areas</li>
+  </ul>
+  <p>If you're not sure whether we cover your area, just ask when you send an enquiry.</p>
+</section>
+
+<div class="enquiry-section">
+  <div class="enquiry-wrapper">
+    <div class="enquiry-form">
+      <h2>Enquire About Automatic Lessons</h2>
+      <p class="form-subtext">⚡ Response within 2 hours • 24/7 support</p>
+      
+      <form action="#" method="post">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fullname">Full Name *</label>
+            <input type="text" id="fullname" name="fullname" required>
+          </div>
+          <div class="form-group">
+            <label for="mobile">Mobile Number *</label>
+            <input type="tel" id="mobile" name="mobile" required>
+          </div>
+        </div>
+        
+        <div class="form-group" style="margin-bottom:1.25rem">
+          <label for="postcode">Postcode *</label>
+          <input type="text" id="postcode" name="postcode" required>
+        </div>
+        
+        <div class="form-group" style="margin-bottom:1.25rem">
+          <label for="service">What are you looking for? *</label>
+          <select id="service" name="service" required>
+            <option value="">Please select...</option>
+            <option value="automatic" selected>Automatic Driving Lessons</option>
+            <option value="manual">Manual Driving Lessons</option>
+            <option value="intensive">Intensive Driving Courses</option>
+            <option value="refresher">Refresher Driving Lessons</option>
+            <option value="motorway">Motorway Driving Lessons</option>
+            <option value="assessment">Mock Driving Assessment</option>
+            <option value="taxi-assessment">Taxi Driving Assessment</option>
+            <option value="pass-plus">PASS Plus Course</option>
+            <option value="adi-part2">ADI Part 2 Training</option>
+            <option value="adi-part3">ADI Part 3 Training</option>
+          </select>
+        </div>
+        
+        <div class="form-checkbox">
+          <input type="checkbox" id="consent" name="consent" required>
+          <label for="consent">
+            I confirm that I have read and agree to the <a href="/terms-conditions">Terms & Conditions</a> and <a href="/privacy-policy">Privacy Policy</a>, and consent to York Driving Lesson School storing my details and contacting me regarding my enquiry.
+          </label>
+        </div>
+        
+        <button type="submit" class="submit-btn">SEND AN ENQUIRY</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="faq-section">
+  <div class="faq-wrapper">
+    <h2>Frequently Asked Questions</h2>
+    
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3 class="faq-question">Do you offer automatic driving lessons in York?</h3>
+        <div class="faq-answer">Yes, we provide automatic driving lessons throughout York with a DVSA approved instructor. Lessons are available for complete beginners, nervous drivers, and anyone who prefers learning in an automatic car.</div>
+      </div>
+      
+      <div class="faq-item">
+        <h3 class="faq-question">Are automatic lessons good for nervous drivers?</h3>
+        <div class="faq-answer">Yes, automatic lessons can be particularly helpful for nervous drivers. Without the need to manage gears and clutch, you can focus on the road and building confidence. Lessons are calm, structured, and tailored to your pace.</div>
+      </div>
+      
+      <div class="faq-item">
+        <h3 class="faq-question">Is automatic easier than manual?</h3>
+        <div class="faq-answer">Many learners find automatic easier because there's no clutch or gear changes to worry about. This allows you to focus more on road awareness, hazard perception, and safe driving. However, both types of lessons teach the same driving skills.</div>
+      </div>
+      
+      <div class="faq-item">
+        <h3 class="faq-question">Can I start automatic lessons as a complete beginner?</h3>
+        <div class="faq-answer">Absolutely. Automatic lessons are suitable for complete beginners. You don't need any previous driving experience to start learning in an automatic car.</div>
+      </div>
+      
+      <div class="faq-item">
+        <h3 class="faq-question">How many automatic lessons will I need?</h3>
+        <div class="faq-answer">The number of lessons varies depending on your starting point and how quickly you learn. Most learners need around 40-50 hours, though some need more or less. We can give you a better idea once we've assessed your current level.</div>
+      </div>
+      
+      <div class="faq-item">
+        <h3 class="faq-question">Do automatic lessons cover York test routes?</h3>
+        <div class="faq-answer">Yes, all automatic driving lessons include practice on local York test routes. This helps you become familiar with the roads and areas used during the driving test, which can make test day less stressful.</div>
+      </div>
+      
+      <div class="faq-item">
+        <h3 class="faq-question">Can I switch from manual to automatic lessons?</h3>
+        <div class="faq-answer">Yes, you can switch from manual to automatic lessons at any time. Some learners start with manual lessons and switch to automatic if they find the gears and clutch too challenging.</div>
+      </div>
+      
+      <div class="faq-item">
+        <h3 class="faq-question">Can I take my driving test in an automatic car?</h3>
+        <div class="faq-answer">Yes, you can take your driving test in an automatic car. If you pass in an automatic, you'll receive an automatic-only licence, which means you can drive automatic vehicles but not manual ones.</div>
+      </div>
+      
+      <div class="faq-item">
+        <h3 class="faq-question">Will an automatic licence let me drive manual cars?</h3>
+        <div class="faq-answer">No, if you pass your test in an automatic car, you can only drive automatic vehicles. To drive manual cars, you would need to pass another test in a manual vehicle. However, if you pass in a manual car, you can drive both manual and automatic vehicles.</div>
+      </div>
+      
+      <div class="faq-item">
+        <h3 class="faq-question">Do you offer evening or weekend lessons?</h3>
+        <div class="faq-answer">Yes, automatic driving lessons are available at times that suit your schedule, including mornings, afternoons, evenings, and weekends. We do our best to work around your commitments.</div>
+      </div>
+      
+      <div class="faq-item">
+        <h3 class="faq-question">Do you offer pickup and drop-off?</h3>
+        <div class="faq-answer">Yes, pickup and drop-off is included with all automatic driving lessons. We can collect you from your home, work, college, or another convenient location, and drop you back afterwards.</div>
+      </div>
+      
+      <div class="faq-item">
+        <h3 class="faq-question">Which areas of York do you cover?</h3>
+        <div class="faq-answer">We provide automatic driving lessons across York city centre, Acomb, Clifton Moor, Heworth, Fulford, Tang Hall, Rawcliffe, Bishopthorpe, and nearby areas. If you're not sure whether we cover your area, just ask when you enquire.</div>
+      </div>
+      
+      <div class="faq-item">
+        <h3 class="faq-question">Do you help with test preparation?</h3>
+        <div class="faq-answer">Yes, test preparation is included as part of your automatic driving lessons. As you progress, lessons will focus more on test-standard driving, independent routes, and building the confidence you need for test day.</div>
+      </div>
+      
+      <div class="faq-item">
+        <h3 class="faq-question">How do I enquire about automatic driving lessons?</h3>
+        <div class="faq-answer">You can use the enquiry form on this page to send us your details. We'll get back to you as soon as possible to discuss availability, answer any questions, and arrange your first lesson.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">York Driving Lesson School</div>
+      <p class="footer-text">DVSA approved driving lessons in York. Automatic & manual lessons, intensive courses, refresher lessons, motorway lessons, driving assessments, and ADI training across York and surrounding areas.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="automatic-driving-lessons.html">Automatic Lessons</a>
+      <a href="/manual-driving-lessons-york">Manual Lessons</a>
+      <a href="/intensive-driving-courses-york">Intensive Courses</a>
+      <a href="/refresher-driving-lessons-york">Refresher Lessons</a>
+      <a href="/motorway-driving-lessons-york">Motorway Lessons</a>
+      <a href="/adi-part-2-training-york">ADI Part 2 Training</a>
+      <a href="/adi-part-3-training-york">ADI Part 3 Training</a>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#areas">Areas</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html">Enquire Now</a>
+      <a href="sitemap.html">Sitemap</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 York Driving Lesson School. All rights reserved.
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+document.querySelector('form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  alert('Thank you for your enquiry. We will get back to you as soon as possible.');
+});
+</script>
+
+</body>
+</html>
